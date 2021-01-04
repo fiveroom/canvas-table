@@ -1,0 +1,55 @@
+"use strict"
+import { DrawBox, Draw } from './draw.js';
+
+let data = [
+    ["一", "二", "三", "一", "二", "三", "一", "二", "三", "一", "二"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"],
+    [123, 345, "dfdsf", "dsf", "2222", "dsfas", 345, "dfdsf", "dsf", "2222", "dsfas"]
+]
+let cfg = {
+    w: 400,
+    h: 400,
+    data: data
+}
+let draw = new Draw(cfg)
